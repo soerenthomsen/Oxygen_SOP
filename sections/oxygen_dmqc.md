@@ -2,7 +2,8 @@
 
 ## Calculation of oxygen variables
 
-Following {cite}`Bittig2018`.
+All oxygen sensors require recalculation of the measured oxygen concentration and saturation following quality control of salinity and temperature.
+We recommend calculating the in-situ density and using $\mu mol~kg^{-1}$ as the primary reporting unit.
 
 ## Sensor drift correction
 Aanderaa describe the in-situ drift characteristics of the 4330 and 4831 series optodes as being < 0.5 % per year and they make no distinction between the standard or fast (“F"-type) foils {cite}`TengbergHovdenes2014`.
@@ -13,7 +14,7 @@ The drift is believed to be due to bleaching of the luminophore foil via ambient
 The bleaching effect is partly counteracted by a destabilising effect on the luminophore. 
 Together this manifests as a positive factor on the oxygen concentration (slope > 1) and a positive offset at zero oxygen.
 
-{cite}`Queste2018` recorded drifts of 0.0176 and 0.0109 $\mu$mol/kg/day for two Seagliders using inflections in the oxygen profiles as the glider penetrated to Arabian Sea Oxygen Minimum Zone and the sodium sulphite method, but no Winklers. 
+{cite}`Queste2018` recorded drifts of 0.0176 and 0.0109 $\mu mol~kg^{-1}~d^{-1}$ for two Seagliders using inflections in the oxygen profiles as the glider penetrated to Arabian Sea Oxygen Minimum Zone and the sodium sulphite method, but no Winklers. 
 {cite}`BittigKoertzinger2015` report a 10 % drift over 3 years, but this is a combination of in-situ and ex-situ drift. 
 {cite}`Bittig2018` determined the drift to be typically 0.1-0.2 % per year in-situ. 
 A drift of 0.0004 % d-1 has been calculated based on UEA seagliders against Baltic deep water oxygen climatology {cite}`Possenti2021`.
