@@ -44,24 +44,25 @@ Otherwise foils should typically not be replaced unless mechanically damaged (li
 ### Calibration equation and firmware versions
 The way optode foils are initially calibrated by Aanderaa, and how the measured values are processed by the optode varies between different optode versions.
 The optode illuminates the sensing foil with both a red and blue LED. 
-Since the red light does not produce fluorescence in the foil the phase measurements are obtained from the difference between the blue (P1) and the red (P2) excitation.
+Since the red light does not produce fluorescence in the foil the phase measurements are obtained from the difference between the blue ($P_1$) and the red ($P_2$) excitation.
 
-P_T = A(T) + (P1 - P2) · B(T)
+$$P_T = A(T) + (P_1 - P_2) · B(T)$$
 
-Where P_T is the temperature compensated phase (known as ‘TCphase‘). 
+Where P_T is the temperature compensated phase (known as `TCphase`). 
 A and B are temperature dependent coefficients which allow for temperature compensation of the phase measurement. 
-However for most 4330, 4831 and 4835 optodes these are not used, such that A(T) = 0 and B(T) = 1. 
-This can be confirmed by communicating with an optode and inspecting the ‘PTC0Coef‘ and ‘PTC1Coef‘ properties. 
+However for most 4330, 4831 and 4835 optodes these are not used, such that $A(T) = 0$ and $B(T) = 1$. 
+This can be confirmed by communicating with an optode and inspecting the `PTC0Coef` and `PTC1Coef` properties. 
 For older optodes (4330 serial numbers < 1000) the temperature compensated phase is then used to calculate ‘calphase‘ (P_c). 
-For newer optodes P_T = P_c. Similarly older optodes have their calibration (and recalibration) applied though the modification of the ‘PhaseCoef‘ coefficients. 
-On later optodes the calibration is not applied in phase space, but on the oxygen concentration though the use of the ‘ConcCoef0‘ and ‘ConcCoef1‘ coefficents (‘PhaseCoef0‘ and ‘PhaseCoef1‘ are set to zero and 1 respectively). 
+For newer optodes $P_T = P_c$. Similarly older optodes have their calibration (and recalibration) applied though the modification of the `PhaseCoef` coefficients. 
+On later optodes the calibration is not applied in phase space, but on the oxygen concentration though the use of the `ConcCoef0` and `ConcCoef1` coefficients (`PhaseCoef0` and `PhaseCoef1` are set to zero and 1 respectively). 
 Consult your optode calibration sheet and confirm which terms are being used.
 There are three different calibration equations used to convert the measured phase to oxygen equations:
 The “Mk1” equation used by the older 3835 optodes uses a 5x4 matrix of coefficients. 
-The “Mk2” equation is used by non-multipoint calibrated 4330(F) and 4835 optodes, and uses a 2x14 matrix (FoilCoefA and FoilCoefB) together with a 2x27 matrix for the polynomial degree, this second matrix is the same across all of these type optodes. 
+The “Mk2” equation is used by non-multipoint calibrated 4330(F) and 4835 optodes, and uses a 2 x 14 matrix (FoilCoefA and FoilCoefB) together with a 2 x 27 matrix for the polynomial degree, this second matrix is the same across all of these type optodes. 
 Newer multipoint calibrated optodes use the Stern-Volmer (SVU) equation proposed by {cite}`Uchida2008` which has 6 terms.
 
-Regardless of the calibration equation used the resultant oxygen concentration (in $\mu mol~L^{-1}$) and saturation (\%) need to be corrected for in-situ salinity.
+Regardless of the calibration equation used the resultant oxygen concentration (μmol L<sup>-1</sup>) and saturation (\%) need to be corrected for in-situ salinity.
+.
 Optodes do not measure salinity, but they can however be configured to apply this salinity correction internally.
 We recommend to never change this from the default value of zero and to always apply a correction based on matched salinity during RTQC or DMQC.
 Aanderaa currently use the "combined" fit from {cite:t}`GarciaGordon1992` for this correction in their documentation.
@@ -71,7 +72,7 @@ Non-multipoint foil calibrations are based on a common characterisation of a pro
 Multipoint calibrations consist of 40 calibration points across a range of concentrations and temperatures and offer improved accuracy and should be preferred when purchasing these sensors.
 Consult your optode foil calibration document to verify which version your optode is using. 
 Understanding these differences in how the calculations are performed is important when recalculating oxygen from the phase readings, such as when compensating for lag.
-Regardless of the optode version, oxygen can be recalculated from calphase using the approach of {cite}`Uchida2008`.
+Regardless of the optode version, oxygen can be recalculated from `calphase` using the approach of {cite}`Uchida2008`.
 During the initial months of storage/use a Foil maturation process occurs resulting in lower readings by several %. 
 The maximum observed maturation induced drift on more than 1000 sensor has been 8 % for sensors with non-factory pre-matured WTW foils (model: 4835, 4531 and 5730 Steinsvik) and 6 % for sensors with factory pre-matured PSt3 foils (model: 4330, 4831, 5331 hadal). 
 During/between field deployments there are possibilities for end users to post-adjust the sensors either by a one-point air-saturation adjustment or by taking reference samples (e.g. water samples and Winkler titration) and/or using a well-calibrated sensor in parallel. 
@@ -90,13 +91,13 @@ The RBRcoda T.ODO uses the same foils and methods as the 4831 and 4831F so every
 RBR refers to the standard optode (~30 s $\tau$) foil as “slow” and the fast (~8 s) as the standard.
 They also use further foil design (~1 s response) which they call fast. 
 The RBR sensor has a smaller form factor than the Aandera optodes, but is overall more similar to a 4831 with the temperature sensor very closely located to the sensing foil. 
-This sensor has recently been implemented in gliders, and little is known about their performance.
+This sensor has recently been implemented in gliders, and relatively little is known about their performance.
 
 ## JFE Advantech RINKO
 AROD-FT sensor (RINKO JFE) is used for the SeaExplorer gliders (Alseamar) and for some Argo floats (small size and low power consumption) (see {numref}`ARODFT`). 
-This sensor is based on the optical (phosphorescence) principle which is now widely known as a remarkably fast response oxygen sensor (below 1s) with a high accuracy of 2 $\mu$mol/kg. 
+This sensor is based on the optical (phosphorescence) principle which is now widely known as a remarkably fast response oxygen sensor (below 1s) with a high accuracy of 2 μmol kg<sup>-1</sup>. 
 This sensor used a multi-points calibration (16 points with 4 temperatures and 4 DO concentrations). 
-In this procedure, the DO reference standards are produced by saturing the primary mixtures with DO concentrations of approximately 4%, 10%, 17% and 25% respectively (certified by the National Metrology Institute of Japan). 
+In this procedure, the DO reference standards are produced by saturating the primary mixtures with DO concentrations of approximately 4 %, 10 %, 17 % and 25 % respectively (certified by the National Metrology Institute of Japan). 
 
 <!--
 ![AROD-FT sensor mounted on a SeaExplorer glider (credit: ALSEAMAR) \label{fig:ARODFT}](/images/ARODFTSensor.jpg)
