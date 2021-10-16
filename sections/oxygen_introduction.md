@@ -60,6 +60,13 @@ There are three different calibration equations used to convert the measured pha
 The “Mk1” equation used by the older 3835 optodes uses a 5x4 matrix of coefficients. 
 The “Mk2” equation is used by non-multipoint calibrated 4330(F) and 4835 optodes, and uses a 2x14 matrix (FoilCoefA and FoilCoefB) together with a 2x27 matrix for the polynomial degree, this second matrix is the same across all of these type optodes. 
 Newer multipoint calibrated optodes use the Stern-Volmer (SVU) equation proposed by {cite}`Uchida2008` which has 6 terms.
+
+Regardless of the calibration equation used the resultant oxygen concentration (in $\mu mol~L^{-1}$) and saturation (\%) need to be corrected for in-situ salinity.
+Optodes do not measure salinity, but they can however be configured to apply this salinity correction internally.
+We recommend to never change this from the default value of zero and to always apply a correction based on matched salinity during RTQC or DMQC.
+Aanderaa currently use the "combined" fit from {cite:t}`GarciaGordon1992` for this correction in their documentation.
+However following {cite:t}`Bittig2015`, this should be ideally be done using the {cite:t}`BensonKrause1984` data.
+
 Non-multipoint foil calibrations are based on a common characterisation of a production batch. 
 Multipoint calibrations consist of 40 calibration points across a range of concentrations and temperatures and offer improved accuracy and should be preferred when purchasing these sensors.
 Consult your optode foil calibration document to verify which version your optode is using. 
