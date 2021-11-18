@@ -15,13 +15,15 @@
   1. [Virginie Racapé](https://github.com/vracape), *Institut Universitaire Européen de la mer CNRS-UMS 3113, IFREMER-coriolis, Plouzané France*
   1. [Claire Gourcuff](https://github.com/cgourcuf), *Euro-Argo ERIC, Brest, France*
   1. John Allen, *SOCIB, Palma de Mallorca, Spain*
-  1. Eva Alou-Font, *SOCIB, Palma de Mallorca, Spain*
+  1. [Eva Alou-Font](https://github.com/ealou), *SOCIB, Palma de Mallorca, Spain*
   1. [Nikolaos D. Zarokanellos](https://github.com/nizaroka), *SOCIB, Palma de Mallorca, Spain*
   1. [Victor Turpin](https://github.com/vturpin), *OceanOps, Brest, France*
   1. [Catherine Schmechtig](https://github.com/catsch), *CNRS, Sorbonne Université, Osu Ecce Terra, Paris, France*
   1. [Pierre Testor](https://github.com/ptestor), *CNRS-Sorbonne Universités (UPMC Univ. Pierre et Marie Curie, Paris 06)-CNRS-IRD-MNHN, UMR 7159, Laboratoire d’Océanographie et de Climatologie (LOCEAN), Institut Pierre Simon Laplace (IPSL), Observatoire Ecce Terra, Paris, France*
   1. [Julius Busecke](https://github.com/jbusecke), *Columbia University/Lamont-Doherty Earth Observatory, New York, USA*
-
+  2. [Evi Bourma](https://github.com/evibourma), *Hellenic Centre for Marine Research (HCMR)/Institute of Oceanography, Athens, Greece*
+  1. [Clark Richards](https://github.com/richardsc), *Fisheries and Oceans Canada, Bedford Institute of Oceanography, Halifax, Canada*
+  1. [Stuart Pearce](https://github.com/s-pearce), *Ocean Observatories Initiative, Endurance Array, Oregon State University, Oregon, USA*
 
 ## SOP development process
 
@@ -37,6 +39,8 @@ Additional authors joined: [Bastien Y. Queste](https://github.com/bastienqueste)
 5) Additional authors joined on GitHub prior to the community review: [Victor Turpin](https://github.com/vturpin), [Catherine Schmechtig](https://github.com/catsch), [Pierre Testor](https://github.com/ptestor), [Julius Busecke](https://github.com/jbusecke).
 
 6) At the moment: 4 months community review on GitHub until 31 January 2022.
+
+7) Additional authors joined on GitHub during the community review: [Evi Bourma](https://github.com/evibourma), [Clark Richards](https://github.com/richardsc), [Stuart Pearce](https://github.com/s-pearce)
 
 ## Contributions 
 
@@ -73,6 +77,7 @@ Joined the two expert sessions during the OceanGliders Best Practice Workshop in
 He provided detailed feedback on the delayed mode quality control section.
 
 [Gerd Krahmann](https://github.com/gkrahmann) provided input to the Real Time Data Processing and Quality Control section. 
+He provided examples of biofouling including the effect on the oxygen data.
 He revised the Delayed Mode Quality Control Section and provided example images of the GEOMAR time delay correction methods. 
 He joined the two expert sessions during the OceanGliders Best Practice Workshop in May 2021. 
 
@@ -96,7 +101,7 @@ Tania Morales contributed to the content of sections pre-deployment, operations 
 
 John Allen provided feedback to the overall document. 
 
-Eva Alou-Font provided feedback to the overall document. 
+[Eva Alou-Font](https://github.com/ealou) provided feedback to the overall document. 
 
 [Nikolaos D. Zarokanellos](https://github.com/nizaroka) provided feedback to the overall document. 
 
@@ -109,4 +114,9 @@ He reviewed the overall document and provided feedback on the overall document.
 
 [Julius Busecke](https://github.com/jbusecke) supported the moving to GitHub and jupyter books. He helped to better facilitate the community review i.e. by implementing the commenting function via utterances-bot.
 
+[Evi Bourma](https://github.com/evibourma) provided input to the SBE43 sensor section.
+
+[Clark Richards](https://github.com/richardsc) provided input to the SBE43 sensor section.
+
+[Stuart Pearce](https://github.com/s-pearce) provided input to the Aanderaa optode section related to MK2 equation, SVU/Multipoint-calibration and firmwares. 
 

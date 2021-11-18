@@ -25,75 +25,13 @@ After recovery the sensor has to be cleaned to remove any biofouling. The follow
 *NOTE: Don’t change the foil unless it is physically damaged.* 
 
 ## Sensor configuration for deployment
-Salinity configuration: 0 PSU. For optode sensors: when there is a small variation in salinity (less than 1 g/kg), it can be set to the mid value avoiding the need of salinity compensation. However, even in that case, it is a good practice to set salinity to 0 for two reasons: 1) it is usually difficult to find the salinity value defined for old deployments and 2) in case the equations change, it would be easier to recalculate oxygen values from uncompensated values. 
-
-## Sensor integration with gliders
-Optodes should be configured to record the intermediate parameters (calphase and temperature), not just oxygen.
+Salinity configuration: 0 PSU. 
+For optode sensors: when there is a small variation in salinity (less than 1 g/kg), it can be set to the mid value avoiding the need of salinity compensation. 
+However, even in that case, it is a good practice to set salinity to 0 for two reasons: 1) it is usually difficult to find the salinity value defined for old deployments and 2) in case the equations change, it would be easier to recalculate oxygen values from uncompensated values. 
+Optodes should be configured to record the intermediate parameters (`calphase` and temperature), not just oxygen concentration or saturation.
 Accurate time-stamps, or offsets relative to CT measurements must be recorded for performing the lag correction.
 
-### Mounting location
-
-#### Spray
-- input from expert needed
-
-#### Seaglider
-On Seagliders the oxygen sensor is normally mounted externally behind the CT sensor (see {numref}`seagliders_standard`. Given this exposed location it is important to mount the optode with the sensing foil facing away from incident light to avoid unnecessary UV exposure.
-<!-- 
-![UEA OGIVE seaglider with 4330F optode, together with NOC LoC spectrophotometric pH, unpumped SBE CT and Fluidion potentiometric pH sensor. \label{fig:seagliders_standard}](/images/OGIVE.png)
--->
-
-:::{figure-md} seagliders_standard
-<img src="/images/OGIVE.png" alt="Seaglider sensor integration" class="bg-primary mb-1" width="400px">
-
-UEA OGIVE seaglider with 4330F optode, together with NOC LoC spectrophotometric pH, unpumped SBE CT and Fluidion potentiometric pH sensor.
-:::
-
-
-#### Slocum
-On slocum gliders the oxygen optode is typically installed aft close to the fin ({numref}`slocum_standard`.
-
-<!--
-![Standard Aanderaa optode 4831 mounting under the fin of the Slocum G2. \label{fig:slocum_standard}](/images/slocum.jpg)
--->
-
-:::{figure-md} slocum_standard
-<img src="/images/slocum.jpg" alt="Slocum sensor integration" class="bg-primary mb-1" width="400px">
-
-Standard Aanderaa optode 4831 mounting under the fin of the Slocum G2.
-:::
-
-However this positioning is not ideal for oxygen measurements due to the optode being within a region of laminar flow {cite}`Moat2016`, additionally the optode response time has been observed to be dependent on the sensor orientation relative to the direction of flow {cite}`Bittig2014`. 
-
-
-An alternative mounting of the Aanderaa optode in a more prominent location fore of the glider fin has been demonstrated as being much more suitable for measuring oxygen on gliders ({numref}`slocum_alternative_mounting`) {cite}`NicholsonFeen2017`. 
-This mounting location means that the sensor foil faces the flow directly and therefore the diffusive boundary layer thickness at the optode membrane is minimised, reducing the optode response time. 
-Furthermore, this mounting location also means that in-situ in-air calibrations can be performed during deployment (similar to those done with Argo floats) which are beneficial when processing the DM oxygen data (see ‘in-air calibration’ section).
-
-<!--
-![Slocum glider showing alternative mounting of an Aanderaa optode perpendicular to the fin. \label{fig:slocum_alternative_mounting}](/images/slocum_better_location.jpg)
--->
-
-:::{figure-md} slocum_alternative_mounting
-<img src="/images/slocum_better_location.jpg" alt="Slocum better O2 sensor location" class="bg-primary mb-1" width="400px">
-
-Slocum glider showing alternative mounting of an Aanderaa optode perpendicular to the fin.
-:::
-
-#### SeaExplorer
-On SeaExplorer gliders, all existing oxygen sensor integrations are installed in the forward wet payload section (the nose cone). External mounting is also feasible using external puck mounts on the dry payload, located approximately 1/3 of the way back, but is rare and generally only used for instrument trials. The Rinko AROD-FT is generally installed on the forward starboard connector, with the sensing foil and temperature probe 15 centimeters back from the tip of the nose and lightly sheltered to avoid damage when making contact with the nose. Both the foil and temperature probe are well exposed to flow. The new RBR Coda integration is also planned to present the foil and probe slightly set back from the tip of the nose, while remaining exposed to unmodified flow. The SBE43 is found only when accompanied with a Seabird pumped CT sensor; both of these sensors are placed in the nose where the RBR Legato CT sensor can be seen in {numref}`Rinko`.
-
-<!--
-![Rinko AROD-FT in the flooded nose cone payload bay of a SeaExplorer next to an RBR Legato sensor.](/images/Rinko.png)
--->
-
-:::{figure-md} Rinko
-<img src="/images/Rinko.png" alt="Rinko" class="bg-primary mb-1" width="400px">
-
-Rinko AROD-FT in the flooded nose cone payload bay of a SeaExplorer next to an RBR Legato sensor.
-:::
-
-
-### Antifouling
+## Antifouling
 Materials immersed in water experience a series of biological and chemical processes, resulting in the formation of complex layers with attached organisms. This biofouling can be divided into microfouling and macrofouling {cite}`Delgado2021`. 
 
 In optodes sensors, biofouling can be severe enough to block oxygen molecules from entering the sensing foil. Aanderaa has different solutions that have been successfully applied, some includes: 
@@ -109,13 +47,13 @@ Mechanical wipers or UV radiation based approaches are generally unsuitable for 
 
 Regardless of whether efforts to prevent fouling are made, it is vital that post-recovery photographs are taken of the optode so that the impact of biofouling can be assessed during DMQC.
 
-### Air saturation quality check
+## Air saturation quality check
 Based on in-air calibrations on Argo floats and gliders {cite}`BittigKoertzinger2015`, {cite}`Johnson2015`, {cite}`Bittig2015`, {cite}`NicholsonFeen2017` and {cite}`Bittig2018` a simpler method has been recommended by the manufacturer to do it before and after deployments (Aanderaa Best Practices for Maintaining High Data Quality). 
 This could be used during campaigns. 
 This won’t be useful if sensor foil is not wet or the temperature of the foil is different from that measured with the temperature sensor. 
-You will need to leave the sensor logging outside in the free air for several hours before and after deployment. Remember to save the air pressure. 
+You will need to leave the sensor logging outside in the free air for several hours before and after deployment. Remember to record the local air pressure. 
 
-*NOTE: At sea level at standard air pressure (101.3 kPa = 1 Atm = 14.69 psi) the sensors should show 100 % if wet and 102 % if completely dry; at air pressure 100 kPa it should show (1.3/101.3)100 = 1.3 % lower.*
+*NOTE: At sea level at standard air pressure (101.3 kPa = 1 Atm = 14.69 psi) the sensors should show 100 % if wet and 102 % if completely dry; at air pressure 100 kPa it should show (1.3/101.3)100 = 1.3 % lower. See also {numref}`air-pressure-effects`.*
 
 *NOTE: It is highly recommended to do this protocol at night when humidity is higher and the temperature is lower and more stable.* 
 
@@ -277,3 +215,18 @@ Materials: Silicon tube for sampling, multiparameter sonde, BOD bottles, Winkler
 Taking samples for Winkler analysis during ballasting in the glider tank at PLOCAN facilities.
 :::
 
+(air-pressure-effects)=
+## Effects of atmospheric pressure during calibration
+
+During the above procedures it is important to note that the equilibrium saturation oxygen concentration (C<sub>sat</sub> i.e. {cite:t}`GarciaGordon1992`) is expressed relative to 1 atmosphere.
+This solubility parametrisation is described as having an RMS error of 0.3 \% (± 1.01 μmol kg<sup>-1</sup>).
+The pressure effects can be significant, at 10 <sup>o</sup>C a change in local air pressure between 990 and 1010 hPa changes the equilibrium concentration by 5.4 μmol kg<sup>-1</sup>.
+The quality of the local air pressure measurements during calibration is worth considering.
+{cite:t}`Ponte2003` estimated the overall uncertainty for ECMWF products to be typically less than 3 hPa over most of the ocean.
+This is equivalent to a 0.9-1.1 μmol kg<sup>-1</sup> error in C<sub>sat</sub>.
+
+:::{figure-md} pressure_effect
+<img src="/images/pressure-effect.png" alt="Effect of sea level pressure on the equilibirum saturation oxygen concentration (C<sub>sat</sub>)" class="bg-primary mb-1" width="400px">
+
+Effect of local air pressure on the equilibrium saturation oxygen concentration (C<sub>sat</sub>) at 10 <sup>o</sup>C.
+:::
